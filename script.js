@@ -394,7 +394,6 @@ function getJson() {
 		tryCount: 0,
 		retryLimit: 3,
 		success: function (data) {
-
 			if (typeof (Storage) !== "undefined") {
 				localStorage.setItem("json_info", JSON.stringify(data));
 			}
@@ -403,7 +402,7 @@ function getJson() {
 			getFileInfo(data);
 		},
 		error: function (xhr, textStatus, errorThrown) {
-
+			console.log(xhr, xhr.status, textStatus, errorThrown)
 			this.tryCount++;
 			if (this.tryCount <= this.retryLimit) {
 				if (textStatus == 'timeout') {
