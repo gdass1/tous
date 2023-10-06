@@ -31,7 +31,8 @@ var actualPage = home;
 var countTime = 0;
 var userInteract = false;
 var interval; // setInterval para contar segundos
-var jsonUrl = "https://www.tous.com/kiosk/tous_305.json";
+//var jsonUrl = "https://www.tous.com/kiosk/tous_305.json";
+var jsonUrl = "https://jsonplaceholder.typicode.com/posts";
 
 var timeout = 30; //tiempo de actualización en segundos (300 = 5 min)
 var timeToHome = timeout;
