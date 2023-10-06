@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <!-- Información de las películas del día -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Tous</title>
+
+        <!-- JavaScript -->
+        <script type="text/javascript"></script>
+  </head>
+  
+<body onLoad="start();">
+    <div id="all_content">
+    </div>
+    <script type="text/javascript">
+
+    	function start(){
+    		console.log("start ...");
+            loadScript("start", "start.js", function(){
+                console.log("start.js ...");
+                firstLoad(); //dev/prod player
+            }); 
+        }
+
+        function loadScript(id, url, callback){
+        	console.log("loadScript ...");
+
+        	var startInterval;
+		    var script = document.createElement("script");
+		    script.id = id;
+
+		    if (script.readyState){  //IE
+		        script.onreadystatechange = function(){
+		            if (script.readyState == "loaded" ||
+	                    script.readyState == "complete"){
+		                	script.onreadystatechange = null;
+							console.log("script onreadystatechange = loaded || complete ...");
+		                	callback();
+		            }
+		        };
+		    } else {  //Others
+		        script.onload = function(){
+					console.log("script onload ...");
+		            callback();
+		        };
+
+		        script.onerror = function () {
+		            console.log("Error on loadScript ...",url);
+		            if(url == "start.js"){
+		                clearTimeout(startInterval);
+		                console.log("retry load start.js");
+		                startInterval = setTimeout(start, 10000);
+		            }
+		        };
+		    }
+
+		    script.src = url;
+		    if(url == "start.js"){
+		        try{
+		            if (document.getElementById(id)){
+		                var element = document.getElementById(id);
+		                element.parentNode.removeChild(element);
+		            }
+		            document.getElementsByTagName("body")[0].appendChild(script);
+		        }catch(err_msg){
+		            console.log("El fichero: " + url + " no se ha descargado");
+		        } 
+		    }
+        }
+    </script>
+  </body>
+</html>

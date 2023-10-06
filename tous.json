@@ -1,0 +1,333 @@
+{
+	"cookies": [{
+		"name":"X-TOUS-KIOSK-STORE",
+		"value":"305",
+		"domain":"www.tous.com",
+		"path":"/",
+		"expire":"2040-01-01T00:00:00.000Z"
+	},
+	{
+		"name":"X-TOUS-KIOSK-INSTANCE",
+		"value":"1",
+		"domain":"www.tous.com",
+		"path":"/",
+		"expire":"2040-01-01T00:00:00.000Z"
+	},
+	{
+		"action": "delete",
+		"name":"JSESSIONID",
+		"domain":"www.tous.com",
+		"path":"/"
+	},
+	{
+		"action": "delete",
+		"name":"tousSite-es-cart",
+		"domain":"www.tous.com",
+		"path":"/"
+	},
+	{
+		"action": "delete",
+		"name":"tousSite-es-wishlist",
+		"domain":"www.tous.com",
+		"path":"/"
+	},
+	{
+		"action": "delete",
+		"name":"tousSite-es|ca-cart",
+		"domain":"www.tous.com",
+		"path":"/"
+	},
+	{
+		"action": "delete",
+		"name":"tousSite-es|ca-wishlist",
+		"domain":"www.tous.com",
+		"path":"/"
+	}],
+	"timeout": 120,
+	"timeout_actions": ["@toolbar:es"],
+	"allowed_authorities": [],
+	"headers": [],
+	"navigation_visible": true,
+	"default_navigation": "@toolbar:es",
+	"navigation": {
+		"toolbars":
+		[{
+			"id": "es",
+			"home": "https://www.tous.com/es-es/colecciones-bolsos-omnio",
+			"buttons":[
+				{
+					"type": "link",
+					"link": "@back",
+					"text" : "<i class=\"material-icons icon\">arrow_back</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "@home",
+					"text" : "<i class=\"material-icons icon\">home</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "@forward",
+					"text" : "<i class=\"material-icons icon\">arrow_forward</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-es/bolsos/c/25",
+					"text" : "Bolsos",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-es/accesorios/c/35",
+					"text" : "Accesorios",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-es/kids-and-baby/c/4243",
+					"text" : "Kids & Baby",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "modal",
+					"text" : "Idioma",
+					"classname": "myButton",
+					"position": "right",
+					"links": [
+					{
+						"type": "link",
+						"text": "Catalá",
+						"link": "@toolbar:ca",
+						"classname": "myButton"
+					},
+					{
+						"type": "link",
+						"text": "Español",
+						"link": "@toolbar:es",
+						"classname": "myButton"
+					}]
+				}
+			]},
+			{
+			"id": "ca",
+			"home": "https://www.tous.com/es-ca/colecciones-bolsos-omnio",
+			"buttons":[
+				{
+					"type": "link",
+					"link": "@back",
+					"text" : "<i class=\"material-icons icon\">arrow_back</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "@home",
+					"text" : "<i class=\"material-icons icon\">home</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "@forward",
+					"text" : "<i class=\"material-icons icon\">arrow_forward</i>",
+					"classname": "myButton",
+					"position": "left"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-ca/bosses/c/25",
+					"text" : "Bosses",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-ca/complements/c/35",
+					"text" : "Accessoris",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "link",
+					"link": "https://www.tous.com/es-ca/kids-and-baby/c/4243",
+					"text" : "Kids & Baby",
+					"classname": "myButton",
+					"position": "middle"
+				},
+				{
+					"type": "modal",
+					"text" : "Idioma",
+					"classname": "myButton",
+					"position": "right",
+					"links": [
+					{
+						"type": "link",
+						"text": "Catalá",
+						"link": "@toolbar:ca",
+						"classname": "myButton"
+					},
+					{
+						"type": "link",
+						"text": "Español",
+						"link": "@toolbar:es",
+						"classname": "myButton"
+					}]
+				}
+			]}
+		],
+		"css" : [
+			{
+				"name": "html, body",
+				"styles": [
+						"font-family: Roboto,Roboto-fallback;",
+						"font-size:16px;",
+						"margin: 0;",
+						"padding: 0;",
+						"height: 100%;"
+			]},
+			{
+				"name": "*",
+				"styles": [
+						"box-sizing: border-box;"
+			]},
+			{
+				"name": ".myButton",
+				"styles": [
+						"color: #3a3a3a;",
+						"cursor:pointer;",
+						"font-weight: 600;",
+						"font-size: 12px;",
+						"letter-spacing: 3.25px;",
+						"-webkit-font-smoothing: antialiased;",
+						"text-transform: uppercase;",
+						"padding: 10px;",
+						"border: solid 1px #ffffff;",
+						"text-align: center;",
+						"line-height: 20px;",
+						"height: 40px;",
+						"margin: 0 10px;",
+						"display: inline-block;"
+			]},
+			{
+				"name": ".myButton > i",
+				"styles": [
+					"display: inline-block;",
+					"vertical-align: middle;"
+			]},
+			{
+				"name": ".myButton:hover",
+				"styles": [
+					"border: solid 1px #000000;",
+					"color: #fff;",
+					"background-color: #000;"
+			]},
+			{
+				"name": ".container",
+				"styles": [
+						"display: flex;",
+						"align-items: center;",
+						"flex-direction: row;",
+						"overflow: hidden;",
+						"height: 100%;",
+						"width: 100%;"
+			]},
+			{
+				"name": ".left",
+				"styles": [
+					"width: 25%;",
+					"white-space: nowrap;",
+					"overflow: hidden;"
+			]},
+			{
+				"name": ".right",
+				"styles": [
+					"width: 25%;",
+					"white-space: nowrap;",
+					"text-align: right;",
+					"overflow: hidden;"
+			]},
+			{
+				"name": ".middle",
+				"styles": [
+					"width: 50%;",
+					"white-space: nowrap;",
+					"overflow: auto;",
+					"text-align: center;"
+			]},
+			{
+				"name": ".icon",
+				"styles": [
+					"line-height: 0px;"
+			]},
+
+			{
+				"name": ".modal",
+				"styles": [
+					  "display: none;",
+					  "position: fixed;",
+					  "z-index: 1;",
+					  "left: 0;",
+					  "top: 0;",
+					  "width: 100%;",
+					  "height: 100%;",
+					  "overflow: auto;",
+					  "background-color: rgb(0,0,0);",
+					  "background-color: rgba(0,0,0,0.6);"
+			]},
+			{
+				"name": ".modal-content",
+				"styles": [
+					  "background-color: #fefefe;",
+					  "top: 12px;",
+					  "margin: 0 auto;",
+					  "position: relative;",
+					  "max-width: 80%;",
+					  "-webkit-animation: expand 1s;"
+
+			]},
+			{
+				"name": "@-webkit-keyframes expand",
+				"styles": [
+						"0%{top:-40px; opacity: 0}",
+						"100%{top:12px; opacity: 1}"
+
+			]},
+			{
+				"name": ".modal-buttons",
+				"styles": [
+   				      "overflow: hidden;",
+					  "white-space: nowrap;",
+					  "text-align: center;"
+
+			]},
+			{
+				"name": ".close",
+				"styles": [
+				  "color: #fff;",
+				  "background-color: #000000;",
+				  "cursor:pointer;",
+				  "font-size: 28px;",
+				  "font-weight: bold;",
+				  "position: absolute;",
+				  "width: 30px;",
+				  "height: 40px;",
+				  "padding: 2px 8px;",
+				  "right: -30px;",
+				  "top: 0px;"
+			]}
+		],
+		"head": [
+			"<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap \" rel=\"stylesheet\">",
+			"<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons \" rel=\"stylesheet\">"
+		]
+	}
+}
