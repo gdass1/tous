@@ -391,6 +391,7 @@ function getJson() {
 	$.ajax({
 		//dataType: "json",
 		dataType: 'jsonp',
+		jsonpCallback: 'callback',
 		url: jsonUrl,
 		tryCount: 0,
 		retryLimit: 3,
