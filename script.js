@@ -402,7 +402,8 @@ function getJson() {
 			getFileInfo(data);
 		},
 		error: function (xhr, textStatus, errorThrown) {
-			console.log(xhr, xhr.status, textStatus, errorThrown)
+			
+			console.log('xhr.responseText', xhr.responseText, 'xhr.status', xhr.status)
 			this.tryCount++;
 			if (this.tryCount <= this.retryLimit) {
 				if (textStatus == 'timeout') {
