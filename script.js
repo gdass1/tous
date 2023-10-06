@@ -389,7 +389,8 @@ function getJson() {
 	// my_api.send("api_command", {command:my_api.API_READ_FILE,params:{'path': "content/" + contentId,'filename':"tous.json",callback:"getFileInfo"}});
 
 	$.ajax({
-		dataType: "json",
+		//dataType: "json",
+		dataType: 'jsonp',
 		url: jsonUrl,
 		tryCount: 0,
 		retryLimit: 3,
