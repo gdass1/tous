@@ -388,6 +388,7 @@ function getJson() {
 	if (developing) console.log("getJson");
 	// my_api.send("api_command", {command:my_api.API_READ_FILE,params:{'path': "content/" + contentId,'filename':"tous.json",callback:"getFileInfo"}});
 
+	/*
 	$.ajax({
 		dataType: "json",
 		url: jsonUrl,
@@ -432,6 +433,38 @@ function getJson() {
 			}
 		}
 	});
+	*/
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", jsonUrl, true);
+	xhr.timeout = 5000;  // Tiempo máximo de espera en milisegundos (ej. 5000 para 5 segundos)
+
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			if (xhr.status === 200) {
+				var data = JSON.parse(xhr.responseText);
+
+				if (typeof (Storage) !== "undefined") {
+					localStorage.setItem("json_info", JSON.stringify(data));
+				}
+
+				console.log(data);
+				getFileInfo(data);
+			} else {
+				console.log("Error getting json: " + xhr.status);
+				// Aquí puedes manejar el error según sea necesario
+			}
+		}
+	};
+
+	xhr.ontimeout = function () {
+		console.log("Timeout, retrying...");
+		// Intenta nuevamente si hay un timeout
+		// Puedes implementar lógica adicional para el reintento aquí
+	};
+
+	xhr.send();
+
+	
 }
 
 function toTimestamp(year, month, day, hour, minute, second) {
